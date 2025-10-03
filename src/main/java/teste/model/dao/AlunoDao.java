@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import teste.model.Aluno;
 import teste.util.jpa.Transactional;
 
+
 public class AlunoDao implements Serializable{
 
 	/**

@@ -45,6 +45,14 @@
 					<h:outputText value="#{aluno.prontuario}" />
 				</p:column>
 
+				<p:column headerText="Ativo"
+					filterBy="#{aluno.ativo}" sortBy="#{aluno.ativo}">
+					<h:outputText value="#{aluno.ativo}" />
+				</p:column>
+
+
+			
+
 				<p:column headerText="Operações">					
 					
 					<p:commandButton id="cb1" icon="pi pi-pencil" title="Editar"	    				
@@ -85,9 +93,17 @@
 			<p:outputLabel for="nome" value="Nome: " />
 			<p:inputText id="nome" value="#{manterAlunoBean.aluno.nome}" 
 			required="true"/>
+	
+			<p:commandButton>
+			<div class="card">
+    <h:form>
+        <p:growl id="msgs"/>
 
-			
-				
+        <h5>Ativo</h5>
+        <p:selectBooleanButton onLabel="Yes" offLabel="No"
+                                onIcon="pi pi-check" offIcon="pi pi-times" style="width:6rem" />
+    </h:form>
+</div></p:commandButton>
 
 			<p:commandButton icon="pi pi-save" id="salvarButton"
 				value="Salvar" title="Grava dados do aluno"
