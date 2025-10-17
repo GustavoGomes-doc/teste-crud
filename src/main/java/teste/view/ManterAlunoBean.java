@@ -45,6 +45,7 @@ public class ManterAlunoBean implements Serializable{
 	public void salvar() {
 		log.info(aluno.toString());
 		manterAlunoService.salvar(aluno);
+		this.setAlunos(manterAlunoService.buscarTodos());
 		
 		FacesContext.getCurrentInstance().
         addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
