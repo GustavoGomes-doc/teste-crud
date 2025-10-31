@@ -1,11 +1,13 @@
 package teste.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,5 +34,12 @@ public class Aluno implements Serializable {
 	private String prontuario;
 	private String nome;
 	private Boolean ativo;
-	
+	private Date dataNascimento;
+	private Float salario;
+	private String telefone;
+
+
+	//relacionando aluno com professor, n para 1, muitos alunos pra 1 professor, neste caso. E estabelecendo professor como chave primaria estrangeira.
+	@ManyToOne
+	private Professor professor;
 }

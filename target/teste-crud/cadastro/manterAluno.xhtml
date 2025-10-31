@@ -51,6 +51,25 @@
 					<h:outputText value="#{aluno.ativo}" />
 				</p:column>
 
+				<p:column headerText="Data Nascimento"
+					filterBy="#{aluno.dataNascimento}" sortBy="#{aluno.dataNascimento}">
+					<h:outputText value="#{aluno.dataNascimento}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</p:column>
+
+				<p:column headerText="Salario"
+					filterBy="#{aluno.salario}" sortBy="#{aluno.salario}">
+					<h:outputText value="#{aluno.salario}">
+					<f:convertNumber pattern="#0.00" />
+					</h:outputText>
+				</p:column>
+
+				<p:column headerText="Telefone"
+					filterBy="#{aluno.telefone}" sortBy="#{aluno.telefone}">
+					<h:outputText value="#{aluno.telefone}" />
+				</p:column>
+
 				<p:column headerText="Operações">					
 					
 					<p:commandButton id="cb1" icon="pi pi-pencil" title="Editar"	    				
@@ -92,8 +111,28 @@
 			<p:inputText id="nome" value="#{manterAlunoBean.aluno.nome}" 
 			required="true"/>
 	
-			<p:outputLabel for="nome" value="Ativo/Inativo: " />
-			<p:selectBooleanCheckbox id="ativo" value="#{manterAlunoBean.aluno.ativo}" itemLabel="Ativo"/>
+			<p:outputLabel for="ativo" value="Ativo/Inativo: " />
+			<p:selectBooleanCheckbox id="ativo" value="#{manterAlunoBean.aluno.ativo}" itemLabel="Ativo"
+			required="true"/>
+
+			<p:outputLabel for="dataNascimento" value="Data Nascimento: " />
+            <p:datePicker id="dataNascimento" value="#{manterAlunoBean.aluno.dataNascimento}" pattern="dd/MM/yyyy"/>
+
+			<p:outputLabel for="salario" value="Salario: " />
+			<p:inputNumber id="salario" value="#{manterAlunoBean.aluno.salario}" symbol="R$"
+            symbolPosition="p" decimalSeparator="," thousandSeparator="." />
+
+			<p:outputLabel for="telefone" value="Telefone: " />
+        	<p:inputMask id="telefone" value="#{manterAlunoBean.aluno.telefone}"
+			 mask="(99) 99999-9999"  validateMask="true"/>
+
+			<p:outputLabel for="professor" value="Professor: " />
+			<p:selectOneMenu id="professor" value="#{manterAlunoBean.aluno.professor}" editable="true">
+                    <f:selectItem itemLabel="Selecione um professor"/>
+                    <f:selectItems value="#{manterAlunoBean.professores}"
+					var="professor" itemLabel="#{professor.nome}"
+					itemValue="#{professor}" />			
+            </p:selectOneMenu>
 
 			<p:commandButton icon="pi pi-save" id="salvarButton"
 				value="Salvar" title="Grava dados do aluno"
