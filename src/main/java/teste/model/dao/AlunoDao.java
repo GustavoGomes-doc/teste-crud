@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import teste.model.Aluno;
+import teste.model.Curso;
+import teste.model.Professor;
 import teste.util.jpa.Transactional;
 
 

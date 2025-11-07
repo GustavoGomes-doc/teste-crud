@@ -42,4 +42,5 @@ public class Aluno implements Serializable {
 	//relacionando aluno com professor, n para 1, muitos alunos pra 1 professor, neste caso. E estabelecendo professor como chave primaria estrangeira.
 	@ManyToOne
 	private Professor professor;
+	private Curso curso;
 }

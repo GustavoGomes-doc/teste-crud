@@ -40,6 +40,11 @@
 					filterBy="#{professor.nome}" sortBy="#{professor.nome}">
 					<h:outputText value="#{professor.nome}" />
 				</p:column>	
+
+				<p:column headerText="Prontuario"
+					filterBy="#{professor.prontuario}" sortBy="#{professor.prontuario}">
+					<h:outputText value="#{professor.prontuario}" />
+				</p:column>	
 				
 
 				<p:column headerText="Operações">					
@@ -77,6 +82,10 @@
 
 			<p:outputLabel for="nome" value="Nome: " />
 			<p:inputText id="nome" value="#{manterProfessorBean.professor.nome}" 
+			required="true"/>
+
+			<p:outputLabel for="prontuario" value="Prontuario: " />
+			<p:inputText id="prontuario" value="#{manterProfessorBean.professor.prontuario}" 
 			required="true"/>
 
 
