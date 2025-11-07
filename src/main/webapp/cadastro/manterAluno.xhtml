@@ -72,12 +72,12 @@
 
 				<p:column headerText="Professor"
 					filterBy="#{aluno.professor}" sortBy="#{aluno.professor}">
-					<h:outputText value="#{aluno.professor}" />
+					<h:outputText value="#{aluno.professor.nome}" />
 				</p:column>
 
 				<p:column headerText="Curso"
 					filterBy="#{aluno.curso}" sortBy="#{aluno.curso}">
-					<h:outputText value="#{aluno.curso}" />
+					<h:outputText value="#{aluno.curso.sigla}" />
 				</p:column>
 
 				<p:column headerText="Operações">					
@@ -137,7 +137,7 @@
 			 mask="(99) 99999-9999"  validateMask="true"/>
 
 			<p:outputLabel for="professor" value="Professor: " />
-			<p:selectOneMenu id="professor" value="#{manterAlunoBean.aluno.professor}" editable="true">
+			<p:selectOneMenu id="professor" value="#{manterAlunoBean.aluno.professor}">
                     <f:selectItem itemLabel="Selecione um professor"/>
                     <f:selectItems value="#{manterAlunoBean.professores}"
 					var="professor" itemLabel="#{professor.nome}"
@@ -145,7 +145,7 @@
             </p:selectOneMenu>
 
 			<p:outputLabel for="curso" value="Curso: " />
-			<p:selectOneMenu id="curso" value="#{manterAlunoBean.aluno.curso}" editable="true">
+			<p:selectOneMenu id="curso" value="#{manterAlunoBean.aluno.curso}">
                     <f:selectItem itemLabel="Selecione um curso"/>
                     <f:selectItems value="#{manterAlunoBean.cursos}"
 					var="curso" itemLabel="#{curso.sigla}"
